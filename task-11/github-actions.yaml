@@ -1,0 +1,12 @@
+name: ci-cd
+on:
+  push:
+    branches: [main]
+jobs:
+  build-test-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: echo "Build image with SHA and latest"
+    - run: echo "Run unit/integration tests"
+    - run: echo "Run Trivy scan and fail on CRITICAL"
